@@ -1,7 +1,7 @@
 #/bin/bash
 
 cd ~ && mkdir repos && cd repos
-git clone git@github.com:joshmedeski/joshs-dotfiles.git dotfiles
+git clone https://github.com/ryaeng/dotfiles.git dotfiles
 
 brew install bash
 brew install bat
@@ -31,12 +31,13 @@ brew install bottom
 brew tap federico-terzi/espanso
 brew install espanso
 
-if [[ $PLATFORM == 'macos' ]]; then
+if [[ `uname` == 'Darwin' ]]; then
    brew install trash-cli
-   brew install skhd
+   brew install koekeishiya/formulae/skhd
    brew services start skhd
-   brew install yabai
+   brew install koekeishiya/formulae/yabai 
    brew services start yabai
+fi
 
 # mackup
 cp ~/repos/dotfiles/mackup/.mackup.cfg ~/.mackup.cfg
@@ -61,16 +62,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # casks
-if [[ $PLATFORM == 'macos' ]]; then
-   brew install --cask 1password
+if [[ `uname` == 'Darwin' ]]; then
+   brew tap epk/epk
+   brew install --cask font-sf-mono-nerd-font
    brew install --cask alacritty
    brew install --cask alfred           
-   brew install --cask discord          
    brew install --cask fantastical      
-   brew install --cask home-assistant   
    brew install --cask obsidian         
    brew install --cask postman          
-   brew install --cask slack
    brew install --cask spacelauncher    
-   brew install --cask spotify
    brew install --cask vivaldi
+fi

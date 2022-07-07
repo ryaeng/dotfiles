@@ -1,4 +1,7 @@
 " Thanks https://www.chrisatmachine.com/Neovim/17-snippets/
+
+let g:coc_node_path = '/Users/ryan/.nvm/versions/node/v16.15.1/bin/node'
+
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
