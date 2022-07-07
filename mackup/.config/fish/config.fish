@@ -23,10 +23,11 @@ case Linux
 end
 
 # user path
-fish_add_path /opt/homebrew/opt/node@14/bin
-fish_add_path /Users/joshmedeski/.nvm/versions/node/v16.15.0/bin
+fish_add_path /opt/homebrew/opt/node@16/bin
+fish_add_path /Users/$USER/.nvm/versions/node/v16.15.1/bin
 fish_add_path "$HOME/go/bin"
 fish_add_path "$HOME/bin"
+fish_add_path "$HOME/.cargo/bin"
 
 # adjust color scheme
 set fish_color_autosuggestion green
